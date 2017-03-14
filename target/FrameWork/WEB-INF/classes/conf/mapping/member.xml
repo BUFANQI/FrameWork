@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiaobu.dao.MemberMapper">
+	<resultMap id="memberResult" type="com.xiaobu.model.Member">
+		<id property="id" column="id" />
+		<result property="phoneNumber" column="phone_number" jdbcType="VARCHAR" />
+		<result property="name" column="name" jdbcType="VARCHAR" />
+		<result property="industryId" column="industry_id" jdbcType="INTEGER" />
+		<result property="industry" column="industry_name" jdbcType="VARCHAR" />
+		<result property="createDate" column="create_date" jdbcType="TIMESTAMP" />
+		<result property="userCode" column="user_code" jdbcType="VARCHAR" />
+		<result property="email" column="email" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<select id="queryData" resultMap="memberResult" parameterType="java.util.Map">
+		select m.*,i.name industry_name from mobile_md_member m left join mobile_md_industry i on i.id=m.industry_id where 1=1
+		<if test="startDate !=null and startDate!='' ">  <![CDATA[and m.create_date>= #{startDate}]]></if>
+		<if test="endDate !=null and endDate !='' "> <![CDATA[and m.create_date <= #{endDate}]]></if>
+		<choose>
+                <when test="sort !=null and sidx!=null and sort !='' and sidx!=''">
+                      <if test="sidx=='name'">
+                        <![CDATA[ ORDER BY m.name ${sort} ]]>
+                       </if>
+                       <if test="sidx=='phoneNumber'">
+                        <![CDATA[ ORDER BY  m.phone_number ${sort} ]]>
+                       </if>
+                        <if test="sidx=='createDate'">
+                        <![CDATA[ ORDER BY  m.create_date ${sort} ]]>
+                       </if>
+                </when>
+                <otherwise>
+                       <![CDATA[ ORDER BY m.id DESC ]]>
+                </otherwise>
+         </choose>
+		<if test="from !=null">
+		LIMIT #{from},#{length}
+		</if>
+	</select>
+	
+	<select id="countData" parameterType="java.util.Map" resultType="java.lang.Integer">     
+   		select count(*) from mobile_md_member m where 1=1
+   		<if test="startDate !=null and startDate!='' ">  <![CDATA[and m.create_date>= #{startDate}]]></if>
+		<if test="endDate !=null and endDate !='' "> <![CDATA[and m.create_date <= #{endDate}]]></if>
+	</select> 
+	<select id="findMemberByPhone" resultMap="memberResult" >
+		select ad.* from mobile_md_member ad where ad.phone_number=#{phoneNumber}
+	</select>
+	<insert id="insert" parameterType="com.xiaobu.model.Member" useGeneratedKeys="true" keyProperty="id">
+		insert into
+		mobile_md_member(industry_id,phone_number,create_date,user_code,email)
+		values(#{industryId},#{phoneNumber},now(),#{userCode},#{email})
+	</insert>
+</mapper>

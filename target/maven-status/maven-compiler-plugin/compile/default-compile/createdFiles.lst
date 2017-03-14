@@ -1,0 +1,11 @@
+com\xiaobu\service\IMemberService.class
+com\xiaobu\service\impl\MemberServiceImpl.class
+com\xiaobu\controller\WechatPayController.class
+com\xiaobu\model\Member.class
+com\xiaobu\controller\IndexController.class
+com\xiaobu\controller\webservice\IWebService.class
+com\xiaobu\controller\webservice\impl\IWebServiceImpl.class
+com\xiaobu\controller\webservice\util\SpringBeanFactoryUtils.class
+com\xiaobu\controller\webservice\Listener\WebServicePublishListener.class
+com\xiaobu\utils\JsonViewUtils.class
+com\xiaobu\dao\MemberMapper.class

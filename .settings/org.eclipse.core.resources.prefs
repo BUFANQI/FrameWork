@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/xiaobu/controller/webservice/Listener/WebServicePublishListener.java=UTF-8
+encoding//src/main/java/com/xiaobu/redis/RedisClient.java=GBK
+encoding//src/main/java/com/xiaobu/redis/SimpleClient.java=GBK
+encoding//src/main/resources/jdbc.properties=UTF-8
+encoding//src/main/resources/log4j.properties=UTF-8
+encoding//src/main/resources/redis.properties=UTF-8
+encoding//src/main/webapp/index.html=UTF-8
+encoding//src/test/java/com/xoabu/test/SingletonDemo.java=GBK
+encoding//src/test/java/com/xoabu/test/SingletonReflectAttack.java=GBK
+encoding//src/test/java/com/xoabu/test/generic/GenericDemo.java=GBK
+encoding//src/test/java/com/xoabu/test/message/JedisUtil.java=GBK
+encoding//src/test/java/com/xoabu/test/message/ObjectUtil.java=GBK
+encoding/<project>=UTF-8

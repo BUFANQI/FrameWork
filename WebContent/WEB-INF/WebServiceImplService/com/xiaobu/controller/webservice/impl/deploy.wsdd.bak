@@ -1,0 +1,36 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from WebServiceImplService WSDL service -->
+
+  <service name="WebServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://impl.webservice.controller.xiaobu.com"/>
+      <parameter name="wsdlServiceElement" value="WebServiceImplService"/>
+      <parameter name="schemaQualified" value="http://impl.webservice.controller.xiaobu.com"/>
+      <parameter name="wsdlServicePort" value="WebServiceImpl"/>
+      <parameter name="className" value="com.xiaobu.controller.webservice.impl.WebServiceImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="WebServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="main" qname="operNS:main" xmlns:operNS="http://impl.webservice.controller.xiaobu.com" soapAction="" >
+        <parameter qname="pns:args" xmlns:pns="http://impl.webservice.controller.xiaobu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="save" qname="operNS:save" xmlns:operNS="http://impl.webservice.controller.xiaobu.com" returnQName="retNS:saveReturn" xmlns:retNS="http://impl.webservice.controller.xiaobu.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://impl.webservice.controller.xiaobu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pwd" xmlns:pns="http://impl.webservice.controller.xiaobu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="sayhello" qname="operNS:sayhello" xmlns:operNS="http://impl.webservice.controller.xiaobu.com" returnQName="retNS:sayhelloReturn" xmlns:retNS="http://impl.webservice.controller.xiaobu.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:name" xmlns:pns="http://impl.webservice.controller.xiaobu.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="sayhello save main"/>
+
+  </service>
+</deployment>
