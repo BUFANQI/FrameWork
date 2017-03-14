@@ -30,9 +30,7 @@ public class IWebServiceImpl implements IWebService{
 	@Override
 	public Member findMemberByPhone(String phoneNumber) {
 		IMemberService memberService=(IMemberService) SpringBeanFactoryUtils.getBean("memberServiceImpl");
-		logger.info("====1");
 		Member member =memberService.findMemberByPhone(phoneNumber);
-		logger.info("====2");
 		return member;
 	}
 	
