@@ -1,4 +1,4 @@
 # FrameWork
-# 自己搭建的简单的springmvc+mybatis框架
-# 集成redis
-# 集成netty
+此项目为集成的springmvc+mybatis框架，如有雷同莫怪莫怪
+07-02-01 集成redis
+07-03-01 集成netty
