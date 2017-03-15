@@ -20,7 +20,7 @@ public class WebServicePublishListener implements ServletContextListener{
 	@Override
 	public void contextInitialized(ServletContextEvent arg0) {
 		 //WebService的发布地址
-        String address = "http://192.168.1.105:8000/WebService";
+        String address = "http://192.168.100.104:8000/WebService";
       //发布WebService，WebServiceImpl类是WebServie接口的具体实现类
         Endpoint.publish(address , new IWebServiceImpl());
         logger.info("WebServicePublishListener启动!");
