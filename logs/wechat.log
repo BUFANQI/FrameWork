@@ -2203,4 +2203,6 @@ Caused by: java.lang.NullPointerException
   [INFO] [2017-03-15 23:25:38][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/qrcode],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.xiaobu.controller.WechatPayController.wchatQrcode(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
   [INFO] [2017-03-15 23:25:38][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/wechat/getMeber],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void com.xiaobu.controller.WechatPayController.getMeber(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
   [INFO] [2017-03-15 23:25:39][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 1795 ms
+  [INFO] [2017-03-15 23:35:21][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Mar 15 23:25:37 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-03-15 23:35:21][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Wed Mar 15 23:25:31 CST 2017]; root of context hierarchy
   
