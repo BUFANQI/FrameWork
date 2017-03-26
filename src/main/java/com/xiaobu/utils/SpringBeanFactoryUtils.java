@@ -1,4 +1,4 @@
-package com.xiaobu.controller.webservice.util;
+package com.xiaobu.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

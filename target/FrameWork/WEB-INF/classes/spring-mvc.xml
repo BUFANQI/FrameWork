@@ -11,7 +11,7 @@
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">  
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven />
-    <!-- <mvc:resources mapping="/htdocs/**" location="/htdocs/"/> -->
+    <mvc:resources mapping="/htdocs/**" location="/htdocs/"/>
     <!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->  
     <context:component-scan base-package="com.xiaobu.controller" />  
     <!--避免IE执行AJAX时，返回JSON出现下载文件 -->  
@@ -32,13 +32,33 @@
             </list>  
         </property>  
     </bean>  
-    <!-- 定义跳转的文件的前后缀 ，视图模式配置-->  
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
-        <!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->  
-        <property name="prefix" value="/" />  
-        <property name="suffix" value=".jsp" />  
+    <!-- 定义跳转的文件的前后缀 ，视图模式配置--> 
+   <!-- 自定义多视图解析器，根据请求后缀调用相应的视图解析器 -->  
+   <bean id="LdMultipleViewResolver" class="com.xiaobu.resolver.SpringMvcExtendViewResolver" p:order="0">   
+        <property name="resolvers">   
+            <map>
+               <entry key="vm">
+                       <bean  class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">  
+                        <property name="cache" value="true"/>  
+                        <property name="prefix" value=""/> 
+                        <property name="suffix" value="" />  
+                        <property name="contentType" value="text/html;charset=UTF-8" />
+                    </bean> 
+               </entry> 
+            </map>   
+        </property>   
     </bean>  
-      
+    
+     <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">  
+        <property name="resourceLoaderPath" value="/WEB-INF/views/vm/"/>  
+        <property name="configLocation" value="classpath:velocity.properties"/><!-- 用下面这个吧 -->
+    </bean>  
+	 <bean  
+	   class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
+	   <property name="prefix" value="/WEB-INF/views/jsp/" />  <!--安全考虑把模板放到url 访问不到的地方-->
+	   <property name="suffix" value=".jsp" />  <!--所有后缀为.jsp 用下面这个class来过滤 url-->
+	   <property name="viewClass" value="org.springframework.web.servlet.view.InternalResourceView"/>  <!--如果不用这个，进行一次内部处理request是访问不到/WEB-INF/-->
+	</bean>
     <!-- 配置文件上传，如果没有使用文件上传可以不用配置，当然如果不配，那么配置文件中也不必引入上传组件包 -->  
     <bean id="multipartResolver"    
         class="org.springframework.web.multipart.commons.CommonsMultipartResolver">    
@@ -49,5 +69,5 @@
         <!-- 内存中的最大值 -->  
         <property name="maxInMemorySize" value="40960" />    
     </bean>   
-  	<bean id="springBeanFactoryUtils" class="com.xiaobu.controller.webservice.util.SpringBeanFactoryUtils"/>
+  	<bean id="springBeanFactoryUtils" class="com.xiaobu.utils.SpringBeanFactoryUtils"/>
 </beans>  

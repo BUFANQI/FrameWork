@@ -4,7 +4,6 @@ com\xiaobu\controller\IndexController.class
 com\xiaobu\redis\message\JedisUtil.class
 com\xiaobu\controller\webservice\IWebService.class
 com\xiaobu\redis\message\Person.class
-com\xiaobu\controller\webservice\util\SpringBeanFactoryUtils.class
 com\xiaobu\netty\ClassHelper.class
 com\xiaobu\utils\UUIDUtils.class
 com\xiaobu\controller\webservice\Listener\WebServicePublishListener.class
@@ -19,12 +18,14 @@ com\xiaobu\netty\NettyServerFactory$1.class
 com\xiaobu\redis\RedisClient.class
 com\xiaobu\netty\EchoServerHandler.class
 com\xiaobu\redis\message\ObjectUtil.class
+com\xiaobu\resolver\SpringMvcExtendViewResolver.class
 com\xiaobu\redis\message\Message.class
 com\xiaobu\utils\StringUtils.class
 com\xiaobu\controller\webservice\impl\IWebServiceImpl.class
 com\xiaobu\netty\EchoClientHandler.class
 com\xiaobu\utils\JsonViewUtils.class
 com\xiaobu\dao\MemberMapper.class
+com\xiaobu\utils\SpringBeanFactoryUtils.class
 com\xiaobu\netty\Constants.class
 com\xiaobu\utils\PropertiesUtils.class
 com\xiaobu\utils\JAXBUtils.class

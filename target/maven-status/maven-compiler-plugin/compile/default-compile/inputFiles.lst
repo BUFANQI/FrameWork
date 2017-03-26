@@ -1,6 +1,8 @@
+E:\workspace\FrameWork\src\main\java\com\xiaobu\utils\SpringBeanFactoryUtils.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\model\Member.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\redis\message\TestRedisQueue.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\redis\message\Configuration.java
+E:\workspace\FrameWork\src\main\java\com\xiaobu\resolver\SpringMvcExtendViewResolver.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\dao\MemberMapper.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\utils\FileUtils.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\netty\NettyServerFactory.java
@@ -21,7 +23,6 @@ E:\workspace\FrameWork\src\main\java\com\xiaobu\redis\RedisClient.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\controller\WechatPayController.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\redis\message\Person.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\controller\webservice\IWebService.java
-E:\workspace\FrameWork\src\main\java\com\xiaobu\controller\webservice\util\SpringBeanFactoryUtils.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\redis\UserDO.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\service\impl\MemberServiceImpl.java
 E:\workspace\FrameWork\src\main\java\com\xiaobu\controller\webservice\impl\IWebServiceImpl.java

@@ -1,17 +1,15 @@
 package com.xiaobu.controller.webservice.impl;
 
 import javax.jws.WebService;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-
-import com.xiaobu.controller.webservice.IWebService;
-import com.xiaobu.controller.webservice.util.SpringBeanFactoryUtils;
-import com.xiaobu.model.Member;
-import com.xiaobu.service.IMemberService;
-
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
+
+import org.apache.log4j.Logger;
+
+import com.xiaobu.controller.webservice.IWebService;
+import com.xiaobu.model.Member;
+import com.xiaobu.service.IMemberService;
+import com.xiaobu.utils.SpringBeanFactoryUtils;
 
 @WebService
 @SOAPBinding(style = Style.RPC)
